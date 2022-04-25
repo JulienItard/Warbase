@@ -12,6 +12,7 @@ GEM
     rack-protection (2.2.0)
       rack
     ruby2_keywords (0.0.5)
+    sequel (5.55.0)
     sinatra (2.2.0)
       mustermann (~> 1.0)
       rack (~> 2.2)
@@ -23,6 +24,7 @@ GEM
       rack-protection (= 2.2.0)
       sinatra (= 2.2.0)
       tilt (~> 2.0)
+    sqlite3 (1.4.2)
     tilt (2.0.10)
 
 PLATFORMS
@@ -31,8 +33,10 @@ PLATFORMS
 DEPENDENCIES
   json
   puma
+  sequel
   sinatra
   sinatra-contrib
+  sqlite3
 
 RUBY VERSION
    ruby 3.1.1p18
