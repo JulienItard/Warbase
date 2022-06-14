@@ -1,4 +1,4 @@
 require "sinatra"
 require "sequel"
 
-DB = Sequel.sqlite
+DB = Sequel.connect("sqlite://warbase.db")
