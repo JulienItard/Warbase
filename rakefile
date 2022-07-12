@@ -1,4 +1,5 @@
 require "rake"
+require "cucumber/rake/task"
 
 namespace :db do
   desc "Run migrations"
@@ -6,8 +7,14 @@ namespace :db do
     require "sequel/core"
     Sequel.extension :migration
     version = args[:version].to_i if args[:version]
+
     Sequel.connect("sqlite://warbase.db") do |db|
       Sequel::Migrator.run(db, "db/migrations", target: version)
     end
   end
 end
+
+
+Cucumber::Rake::Task.new do |t|
+  t.cucumber_opts = ["--format pretty"]
+end 
